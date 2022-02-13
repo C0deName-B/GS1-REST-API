@@ -16,7 +16,10 @@ function getCheckDigit(key)
     }
    
     keepChecking(key)
-    return 10 - total%10
+
+    cd = 10 - total%10
+    if(cd==10)cd=0 //if total%0 is 0 then when end up with 10 but we just need the 1 digit
+    return cd
 }
 
 function addCheckDigit(key)

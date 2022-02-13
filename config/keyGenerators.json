@@ -1,0 +1,13 @@
+{
+	"ssccGenerators":[
+		{
+			"name":"default",
+			"prefix": "0123456",
+			"extensionDigit": 0,
+			"incrementExtDigit": true,
+			"serialStartValue":"000000001",
+			"serialCurrentValue":"000000093",
+			"serialEndValue":"999999999"
+		}
+	]
+}

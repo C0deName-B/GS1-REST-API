@@ -107,4 +107,41 @@ function parse(data,fnc1)
     return result
 }
 
+function generateSSCC(name)
+{
+    //find the generator that matches the name provided
+    var generator = config.keyGen.ssccGenerators.find(gen =>{
+        return gen.name===name
+    })
+
+    //if a name wasn't provided then use the default
+    if(!generator) generator = config.keyGen.ssccGenerators.find(gen =>{
+        return gen.name==='default'
+    })
+
+    //increment current value
+    var nextInt = parseInt(generator.serialCurrentValue)+1
+    var nextVal = nextInt.toString().padStart(generator.serialCurrentValue.length,'0')
+
+    //if we've passed the max value then start back over
+    if(nextVal == parseInt(generator.serialEndValue)+1)
+    {
+        nextVal=generator.serialStartValue;
+
+        //roll the extension digit if enabled
+        if(generator.incrementExtDigit)
+        {
+            generator.extensionDigit = (generator.extensionDigit + 1)%10
+        }
+    }
+
+    sscc = generator.extensionDigit.toString() + generator.prefix + nextVal
+    sscc = checksum.addCheckDigit(sscc)
+    
+    generator.serialCurrentValue = nextVal
+
+    return sscc
+}
+
 module.exports.parse = parse;
+module.exports.generateSSCC = generateSSCC;

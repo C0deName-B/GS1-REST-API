@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "b874a9d8-0076-425f-b60b-bd3bbb63d3ab",
+		"name": "Resting GS1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "reloadConfig",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/gs1/reloadConfig",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"gs1",
+						"reloadConfig"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "validateCheckDigit",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/gs1/validateCheckDigit?key=12345678901231",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"gs1",
+						"validateCheckDigit"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "12345678901231"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addCheckDigit",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/gs1/addCheckDigit?key=1234567890123",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"gs1",
+						"addCheckDigit"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "1234567890123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "parse",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/gs1/parse/?data=00001234560000000018*0112345678901231*21ser123*0212345678901234&fnc1=*",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"gs1",
+						"parse",
+						""
+					],
+					"query": [
+						{
+							"key": "data",
+							"value": "00001234560000000018*0112345678901231*21ser123*0212345678901234"
+						},
+						{
+							"key": "fnc1",
+							"value": "*"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "generateSSCC",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/gs1/generateSSCC/?name=default",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"gs1",
+						"generateSSCC",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "default"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "parse (Testing)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/gs1/parse/?data=00001234560000000013*01123456789A1231*21ser123*021234567890123401123&fnc1=*",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"gs1",
+						"parse",
+						""
+					],
+					"query": [
+						{
+							"key": "data",
+							"value": "00001234560000000013*01123456789A1231*21ser123*021234567890123401123"
+						},
+						{
+							"key": "fnc1",
+							"value": "*"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
