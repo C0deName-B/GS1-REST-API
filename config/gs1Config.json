@@ -1,0 +1,42 @@
+{
+	"fnc1": "\u001d",
+	"applicationIdentifiers": [
+	{
+		"ai": "00",
+		"name": "Serial Shipping Container Code",
+		"maxLength": 18,
+		"fixedLength": true,
+		"numeric": true,
+		"checkDigitValidation":true
+	},
+	{
+		"ai": "01",
+		"name": "Global Trade Item Number (GTIN)",
+		"maxLength": 14,
+		"fixedLength": true,
+		"numeric": true,
+		"checkDigitValidation":true
+	},
+	{
+		"ai": "02",
+		"name": "Global Trade Item Number (GTIN) of contained trade items",
+		"maxLength": 14,
+		"fixedLength": true,
+		"numeric": true
+	},
+	{
+		"ai": "10",
+		"name": "Batch or lot number",
+		"maxLength": 20,
+		"fixedLength": false,
+		"numeric": false
+	},
+	{
+		"ai": "21",
+		"name": "Serial number",
+		"maxLength": 20,
+		"fixedLength": false,
+		"numeric": false
+	}
+	]
+}
